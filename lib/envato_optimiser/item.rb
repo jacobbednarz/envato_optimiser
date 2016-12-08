@@ -73,7 +73,8 @@ module EnvatoOptimiser
         images << image.attributes['src'].value
       end
 
-      images
+      # Don't choke on protocol relative URL's.
+      images.collect { |image| image.gsub(%r{^//}, 'https://') }
     end
   end
 end
