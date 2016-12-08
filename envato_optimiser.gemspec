@@ -8,7 +8,7 @@ Gem::Specification.new do |spec|
   spec.version  = EnvatoOptimiser::VERSION
   spec.authors  = ['Jacob Bednarz']
   spec.email    = ['jacob.bednarz@gmail.com']
-
+  spec.licenses = ['MIT']
   spec.summary  = %q{A gem to make it easier to identify potential issues on your Envato item pages.}
   spec.homepage = 'https://github.com/jacobbednarz/envato_optimiser'
 
