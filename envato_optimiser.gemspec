@@ -4,16 +4,15 @@ $LOAD_PATH.unshift(lib) unless $LOAD_PATH.include?(lib)
 require 'envato_optimiser/version'
 
 Gem::Specification.new do |spec|
-  spec.name          = 'envato_optimiser'
-  spec.version       = EnvatoOptimiser::VERSION
-  spec.authors       = ['Jacob Bednarz']
-  spec.email         = ['jacob.bednarz@gmail.com']
+  spec.name     = 'envato_optimiser'
+  spec.version  = EnvatoOptimiser::VERSION
+  spec.authors  = ['Jacob Bednarz']
+  spec.email    = ['jacob.bednarz@gmail.com']
 
-  spec.summary       = %q{TODO: Write a short summary, because Rubygems requires one.}
-  spec.description   = %q{TODO: Write a longer description or delete this line.}
-  spec.homepage      = 'https://github.com/jacobbednarz/envato_optimiser'
+  spec.summary  = %q{A gem to make it easier to identify potential issues on your Envato item pages.}
+  spec.homepage = 'https://github.com/jacobbednarz/envato_optimiser'
 
-  spec.files         = `git ls-files -z`.split("\x0").reject do |f|
+  spec.files    = `git ls-files -z`.split("\x0").reject do |f|
     f.match(%r{^(test|spec|features)/})
   end
 
