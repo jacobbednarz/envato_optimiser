@@ -10,18 +10,51 @@ module EnvatoOptimiser
 
 
     def initialize(url)
-      @uri      = URI.parse(url)
-      @response = Net::HTTP.get_response(uri)
-      @document = Nokogiri::HTML(response.body)
+      @uri             = URI.parse(url)
+      @response        = Net::HTTP.get_response(uri)
+      @document        = Nokogiri::HTML(response.body)
+      @image_404s      = []
+      @image_403s      = []
+      @image_redirects = []
     end
 
     def user_image_count
       user_images.size
     end
 
+    def image_count
+      images.size
+    end
+
+    def image_403_count
+      @image_403s.size
+    end
+
+    def image_404_count
+      @image_404s.size
+    end
+
+    def image_redirect_count
+      @image_redirects.size
+    end
     private
 
-    def user_images
+    def image_response_check
+      images.each do |image|
+        response = Net::HTTP.get_response(URI.parse(image))
+
+        case response.code.to_i
+        when 300..399
+          @image_redirects << image
+        when 404
+          @image_404s << image
+        when 403
+          @image_403s << image
+        end
+      end
+    end
+
+    def images
       images = []
 
       @document.css('.user-html img').map do |image|
