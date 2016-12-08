@@ -18,8 +18,9 @@ module EnvatoOptimiser
       @image_redirects = []
     end
 
-    def user_image_count
-      user_images.size
+    def check!
+      image_response_check
+      to_h
     end
 
     def image_count
