@@ -38,6 +38,17 @@ module EnvatoOptimiser
     def image_redirect_count
       @image_redirects.size
     end
+
+    def to_h
+      {
+        :image_count          => image_count,
+        :image_403_count      => image_403_count,
+        :image_404_count      => image_404_count,
+        :image_redirect_count => image_redirect_count
+      }
+    end
+    alias_method :to_hash, :to_h
+
     private
 
     def image_response_check
