@@ -1,5 +1,5 @@
 require 'envato_optimiser/version'
 
 module EnvatoOptimiser
-  # Your code goes here...
+  autoload :Item, 'envato_optimiser/item'
 end
