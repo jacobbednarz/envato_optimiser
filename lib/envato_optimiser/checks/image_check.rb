@@ -1,3 +1,7 @@
+require 'net/http'
+require 'uri'
+require 'nokogiri'
+
 module EnvatoOptimiser
   class ImageCheck < Check
     attr_reader :response,
@@ -28,7 +32,7 @@ module EnvatoOptimiser
     #   - image_403_count: Number of HTTP 403's encountered.
     #   - image_404_count: Number of HTTP 404's encountered.
     #   - image_redirect_count: Number of HTTP redirects encountered.
-    #   - total_image_weight: Size in bytes of all HTTP image requests made.
+    #   - total_image_weight: Size in bytes of all HTTP requests made.
     def to_h
       {
         :image_count          => image_count,

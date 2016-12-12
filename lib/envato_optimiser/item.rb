@@ -1,7 +1,3 @@
-require 'net/http'
-require 'uri'
-require 'nokogiri'
-
 module EnvatoOptimiser
   class Item
     def initialize(url)
@@ -12,7 +8,7 @@ module EnvatoOptimiser
     #
     # Returns a Hash of the check values from each subclass.
     def check!
-      image_check = EnvatoOptimiser::ImageCheck.new(@url).run!
+      EnvatoOptimiser::ImageCheck.new(@url).run!
     end
   end
 end
