@@ -37,7 +37,7 @@ the tests.
 
 ```rb
 item.check!
-#=> {:image_count=>73, :image_403_count=>0, :image_404_count=>0, :image_redirect_count=>2}
+#=> {:image_count=>73, :image_403_count=>0, :image_404_count=>0, :image_redirect_count=>2, :total_image_weight=>3895262}
 ```
 
 This will return a hash with the results of the check. Depending on the
