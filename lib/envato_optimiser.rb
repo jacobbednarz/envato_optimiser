@@ -1,7 +1,7 @@
 require 'envato_optimiser/version'
+require 'envato_optimiser/item'
+require 'envato_optimiser/checks'
+require 'envato_optimiser/checks/image_response_status_code_check'
 
 module EnvatoOptimiser
-  autoload :Item,       'envato_optimiser/item'
-  autoload :Check,      'envato_optimiser/check'
-  autoload :ImageCheck, 'envato_optimiser/checks/image_check'
 end
